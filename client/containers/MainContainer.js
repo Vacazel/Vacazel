@@ -7,8 +7,8 @@ const MainContainer = () => {
   const [isLogin, setIsLogin] = useState(true);
   return (
     <div className='main_container'>
-      <Header />
-      {isLogin ? <LoginContainer /> : <ContentContainer />}
+      <Header isLogin={isLogin} />
+      {isLogin ? <ContentContainer /> : <LoginContainer />}
     </div>
   );
 };
