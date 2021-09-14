@@ -5,7 +5,7 @@ const bucketController = {};
 bucketController.getBucket = async (req, res, next) => {
   const query = '';
   const result = await db.query(query);
-  res.locals.games = result.rows;
+  res.locals.bucketList;
   next();
 }
 

@@ -26,7 +26,7 @@ apiController.getLatLong = async (req, res, next) => {
 apiController.getSuggestionsAndId = async (req, res, next) => {
   const {name, lat, lon} = res.locals.apiObj;
   try {
-    await axios.get(`https://api.opentripmap.com/0.1/en/places/autosuggest?name=${name}&radius=15000&lon=${lon}&lat=${lat}&apikey=${process.env.TRAVEL_API}`)
+    await axios.get(`https://api.opentripmap.com/0.1/en/places/autosuggest?name=${name}&radius=5000&lon=${lon}&lat=${lat}&apikey=${process.env.TRAVEL_API}`)
     .then(response => {
       console.log(response.data.features[0].properties.xid);
       const featuresData = response.data.features
