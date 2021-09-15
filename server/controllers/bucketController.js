@@ -3,7 +3,7 @@ const db = require('../db/dbConnect');
 const bucketController = {};
 
 bucketController.getBucket = async (req, res, next) => {
-  const query = '';
+  const query = 'SELECT l.name, l.image from locations l JOIN bucket_list b ON b.location_id = l.id JOIN users u ON u.id = b.user_id;';
   const result = await db.query(query);
   res.locals.bucketList;
   next();
