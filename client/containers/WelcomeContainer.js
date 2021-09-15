@@ -1,6 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
+import UserDataService from '../service/userDataService';
 
 const WelcomeContainer = () => {
+  const [randomPlace, setRandomPlace] = useState([])
+
+  useEffect(async()=> {
+    const result3 = await UserDataService.getUserData('/api/getlocations')
+    setRandomPlace(result3);
+  },[])
+
+
   return (
     <div className='welcome_container'>
       <div className='main_banner'>

@@ -34,8 +34,9 @@ const ContentContainer = () => {
     const result = await UserDataService.getUserData('/api')
     console.log(result);
     const result2 = await UserDataService.getUserData('/api/bucketlist')
-    const result2 = await UserDataService.getUserData('/api/getlocations')
     console.log(result2);
+    const result3 = await UserDataService.getUserData('/api/getlocations')
+    console.log(result3);
     // get request from server to update last place.
     // when there is change on updatePlace, we will call the get request,
     // we need to setLastPlace from the axios call.
