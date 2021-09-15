@@ -79,8 +79,59 @@
   border-radius: 10px;
 }
 
+.edit_date {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.edit {
+  padding-left: 25px;
+  flex-grow: 4;
+}
+
+.edit_button {
+  margin-left: 25px;
+  background-color: $gray-color;
+  border: none;
+  border-radius: 10px;
+  width: 70px;
+}
+
+#last_place {
+  border-radius: 7px;
+  border-color: $secondary-color;
+  padding-right: 10px;
+  margin-left: 10px;
+  width: 275px;
+}
+
+#budget {
+  border-radius: 7px;
+  border-color: $secondary-color;
+  padding-right: 10px;
+  outline: none;
+  margin-left: 10px;
+  width: 275px;
+}
+
 .popup_Btns {
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
+}
+
+.popup_closeBtn {
+  padding: 0.4rem 1rem;
+  color: $accent-color2;
+  border: 2px solid $accent-color2;
+  background-color: $background-color;
+  border-radius: 30px;
+}
+
+.popup_submitBtn {
+  padding: 0.4rem 1rem;
+  color: $white-color;
+  background-color: $primary-color;
+  border-radius: 30px;
 }
