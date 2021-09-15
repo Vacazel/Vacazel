@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import { useEffect } from 'react/cjs/react.development';
 import User from './User';
 
-const Header = ({ isLogin }) => {
+const Header = ({ isLogin, setIsLogin }) => {
   const [clickUser, setClickUser] = useState(false);
 
   const clickUserHandler = (e) => {
@@ -19,6 +19,10 @@ const Header = ({ isLogin }) => {
     }
   }, [clickUser]);
 
+  const clickLoginHandler = () => {
+    setIsLogin(true);
+  };
+
   return (
     <header className='header'>
       <div className='header_logo'>VACAZEL</div>
@@ -28,10 +32,12 @@ const Header = ({ isLogin }) => {
             <div className='header_icon' onClick={clickUserHandler}>
               USER
             </div>
-            {clickUser && <User />}
+            {clickUser && <User setIsLogin={setIsLogin} />}
           </div>
         ) : (
-          <button className='header_signin'>SIGN IN</button>
+          <button className='header_signin' onClick={clickLoginHandler}>
+            SIGN IN
+          </button>
         )}
       </div>
     </header>
