@@ -1,0 +1,36 @@
+.content_container {
+  width: 100vw;
+  height: 94vh;  
+}
+
+h1 {
+  color: $white-color;
+}
+
+.main-banner {
+  // text-align: center;
+  // margin: auto;
+  // vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-image: url('https://media.cntraveler.com/photos/5d112d50c4d7bd806dbc00a4/16:9/w_2560%2Cc_limit/airbnb%252520luxe.jpg');
+  background-position: center;
+}
+
+.sub-banner {
+  margin: 40px;
+}
+
+.sub-banner-pic {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;    
+  flex-wrap: wrap;
+}
+
+#sub-pic {
+  border-radius: 10px;
+  margin-top: 25px;
+}

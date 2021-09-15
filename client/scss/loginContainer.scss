@@ -1,4 +1,40 @@
 .login_container {
   width: 100vw;
-  height: 94vh;
+  // height: 88vh;
+  // display: block;
+}
+
+.login-form {
+  // display: inline-block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.login-inputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.login-button {
+  margin: 10px;
+  border-radius: 10px;
+  background-color: $accent-color3;
+  border: none;
+  color: $white-color;
+  width: 6vw;
+}
+
+#username {
+  border-radius: 7px;
+  border: none;
+}
+
+#password {
+  border-radius: 7px;
+  border: none;
 }
