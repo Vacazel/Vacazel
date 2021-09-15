@@ -1,6 +1,9 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, createContext, useContext } from 'react';
 import StartDatePicker from './StartDatePicker';
 import EndDatePicker from './EndDatePicker';
+import LastPlace from './LastPlace';
+
+const Context = createContext('Edit Location');
 
 const EditLastPlace = ({ editClickHandler, setlastPlace }) => {
   const [editPlace, setEditPlace] = useState({
@@ -45,33 +48,62 @@ const EditLastPlace = ({ editClickHandler, setlastPlace }) => {
     editClickHandler();
   };
 
+// function to handle changing budget
+const handlePlaceInputChange = (event) => {
+  event.persist();
+  setEditPlace((editPlace) => ({
+    ...editPlace,
+    place: event.target.value,
+  }));
+  console.log(editPlace.place)
+};
+
+  // function to handle changing budget
+  const handleBudgetInputChange = (event) => {
+    event.persist();
+    setEditPlace((editPlace) => ({
+      ...editPlace,
+      budget: event.target.value,
+    }));
+    console.log(editPlace.budget)
+  };
+
+
   return (
     <div className='popup_bg'>
       <div className='edit_last_place'>
-        <div className='content_title'>Fill Out</div>
-        <div className=''>
-          <form>
-            <label>Place Name </label>
-            <input
-              id='last_place'
-              type='text'
-              name='lastplace'
-              placeholder='Edit Last Place'
-            />
-            <input type='submit' value='Edit' />
-          </form>
-          <div></div>
-        </div>
+        <div className='content_title'>Edit Last Travel Details</div>
+        
+        
+          <div className='edit_form'>
+            <form className='edit'>
+              {/* <label>Place Name </label> */}
+              <input
+                id='last_place'
+                type='text'
+                name='lastplace'
+                placeholder='Edit Last Place'
+                onChange={handlePlaceInputChange}
+              />
+              <input className='edit_button' type='submit' value='Edit' />
+            </form>
+          </div>
 
-        <div>
-          <form>
-            <label>Budget </label>
-            <input id='budget' type='text' name='budget' placeholder='Budget' />
-            <input type='submit' value='Edit' />
-          </form>
-        </div>
+          <div className='edit_form'>
+            <form className='edit'>
+              {/* <label>Budget </label> */}
+              <input
+                id='budget'
+                type='text'
+                name='budget'
+                placeholder='Budget'
+                onChange={handleBudgetInputChange}
+              />
+              <input className='edit_button' type='submit' value='Edit' />
+            </form>
+          </div>
 
-        <div className='editDate'>
+        <div className='edit_date'>
           <p>Start Date</p>
           <StartDatePicker startDayHandler={startDayHandler} />
           <p>End Date</p>
