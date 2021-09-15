@@ -11,7 +11,14 @@ const BucketList = () => {
     return setAddClick(false);
   };
 
-  const places = ['Paris', 'Barcelona', 'Seoul', 'Sydney', 'New York', 'Tokyo'];
+  const places = [
+    'Hawaii',
+    'Barcelona',
+    'Seoul',
+    'Sydney',
+    'New York',
+    'Tokyo',
+  ];
   const picture = 'https://via.placeholder.com/250x275';
   const bucket = places.map((place, i) => {
     return (
