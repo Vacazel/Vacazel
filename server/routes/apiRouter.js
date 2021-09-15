@@ -9,11 +9,19 @@ router.get('/', userController.getUserData, userController.lastPlaceVisted, loca
    res.status(200).json(res.locals);
 });
 
+router.get('/getlocations', locationsController.getLocations, (req, res) => {
+  res.status(200).json(res.locals.locationsList);
+});
+
+router.get('/bucketlist', (req, res) => {
+  res.status(200).json(res.locals.getBucket);
+})
+
 router.get('/callapi', (req, res) => {
   res.status(200).json(res.locals.locationData);
 })
 
-router.post('/', apiController.getLatLong, apiController.getSuggestionsAndId, apiController.getImage, locationsController.addLocation, (req, res) => {
+router.post('/addbucketlist', apiController.getLatLong, apiController.getSuggestionsAndId, apiController.getImage, locationsController.addLocation, (req, res) => {
   res.status(200).json(res.locals.locationsList);
 });
 
