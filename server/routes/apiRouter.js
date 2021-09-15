@@ -13,7 +13,7 @@ router.get('/getlocations', locationsController.getLocations, (req, res) => {
   res.status(200).json(res.locals.locationsList);
 });
 
-router.get('/bucketlist', (req, res) => {
+router.get('/bucketlist', bucketController.getBucket, (req, res) => {
   res.status(200).json(res.locals.bucketList);
 })
 
