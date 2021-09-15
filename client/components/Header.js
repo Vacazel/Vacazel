@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import { useEffect } from 'react/cjs/react.development';
 import User from './User';
 
-const Header = ({ isLogin, setIsLogin }) => {
+const Header = ({ isLogin, setIsLogin, isUser }) => {
   const [clickUser, setClickUser] = useState(false);
 
   const clickUserHandler = (e) => {
@@ -30,7 +30,7 @@ const Header = ({ isLogin, setIsLogin }) => {
         {isLogin ? (
           <div className='header_user'>
             <div className='header_icon' onClick={clickUserHandler}>
-              USER
+              {`Hello, ${isUser.username}`}
             </div>
             {clickUser && <User setIsLogin={setIsLogin} />}
           </div>

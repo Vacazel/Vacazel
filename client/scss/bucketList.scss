@@ -1,7 +1,6 @@
 .bucketlist {
   padding: 0 8rem;
   width: 100%;
-  
 }
 
 .bucketlist_title {
@@ -36,35 +35,31 @@
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .bucket_box {
-  // margin: 1rem;
-  // width: 10rem;
-  // height: 10rem;
   border-radius: 10px;
   margin-top: 25px;
   height: 275px;
-  width: 250px;  
-
+  width: 250px;
 }
 
-.bucket_name {
+.bucket_list {
   display: flex;
   padding: 0.3rem 1rem;
   justify-content: space-between;
   font-size: $font-small;
-  inline-size: 250px;
-  overflow-wrap: break-word;  
+  align-items: flex-start;
 }
 
-.bucket_name >*:first-child {
-  align-self: stretch;
+.bucket_name {
+  inline-size: 200px;
+  overflow-wrap: break-word;
 }
-.bucket_name .bucket_delete {
-  justify-content: flex-end;
-  align-items: flex-start;
+
+.bucket_delete {
+  background-color: $background-color;
 }
 
 .bucket_delete:hover {
@@ -83,11 +78,10 @@
   border-radius: 10px;
 }
 
-
 #bucket_place {
   border-radius: 7px;
   border-color: $secondary-color;
   padding-right: 10px;
   margin-left: 10px;
-  width: 275px
+  width: 275px;
 }

@@ -3,21 +3,20 @@ import LastPlace from '../components/LastPlace';
 import BucketList from '../components/BucketList';
 import UserDataService from '../service/userDataService';
 
-const ContentContainer = ({setIsUser}) => {
+const ContentContainer = ({ setIsUser }) => {
   const [countDays, setCountDays] = useState(0);
   const [updatePlace, setUpdatePlace] = useState();
   const [lastPlace, setLastPlace] = useState({
-    startDate: '12/17/2020',
-    endDate: '12/27/2020',
-    place: 'Paris',
+    startDate: '06/03/2019',
+    endDate: '08/01/2019',
+    place: 'New York',
     budget: '3000',
     image: '',
     id: '',
     payDayOff: '',
   });
 
-
-  const calculateDate = () => {
+  useEffect(() => {
     const currentDate = new Date(
       new Date().getMonth() +
         1 +
@@ -27,21 +26,20 @@ const ContentContainer = ({setIsUser}) => {
         new Date().getFullYear()
     );
     const endDate = new Date(lastPlace.endDate);
-    console.log(endDate);
     const days =
       (currentDate.getTime() - endDate.getTime()) / (1000 * 3600 * 24);
 
-    return Math.ceil(days);
-  };
+    setCountDays(Math.ceil(days));
+  }, [lastPlace]);
 
-  useEffect(async() => {
-    const result = await UserDataService.getUserData('/api')
+  useEffect(async () => {
+    const result = await UserDataService.getUserData('/api');
     console.log(result);
     // get request from server to update last place.
     // when there is change on updatePlace, we will call the get request,
     // we need to setLastPlace from the axios call.
 
-    setLastPlace({ 
+    setLastPlace({
       startDate: result.currentUser.start_date,
       endDate: result.currentUser.end_date,
       place: result.lastPlaceVisted.last_place_visited,
@@ -49,9 +47,11 @@ const ContentContainer = ({setIsUser}) => {
       image: result.lastPlaceVisted.image,
       id: result.currentUser.id,
       payDayOff: result.currentUser.paid_time_off_left,
-    })
-
-    setCountDays(calculateDate());
+    });
+    setIsUser({
+      username: result.currentUser.username,
+      userID: result.currentUser.id,
+    });
   }, [updatePlace]);
 
   return (
@@ -70,7 +70,11 @@ const ContentContainer = ({setIsUser}) => {
         <div className='small_font'> This is time to go to a vacation!</div>
       </div>
 
-      <LastPlace lastPlace={lastPlace} setUpdatePlace={setUpdatePlace} />
+      <LastPlace
+        setUpdatePlace={setUpdatePlace}
+        setLastPlace={setLastPlace}
+        lastPlace={lastPlace}
+      />
       <BucketList />
     </div>
   );
