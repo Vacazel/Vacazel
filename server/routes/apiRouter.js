@@ -8,11 +8,11 @@ router.get('/', locationsController.getLocations, (req, res) => {
    res.status(200).json(res.locals.locationsList);
 });
 
-router.get('/callApi', apiController.getLatLong, apiController.getSuggestionsAndId, apiController.getImage, (req, res) => {
+router.get('/callapi', (req, res) => {
   res.status(200).json(res.locals.locationData);
 })
 
-router.post('/', locationsController.addLocation, bucketController.addBucketItem, (req, res) => {
+router.post('/', apiController.getLatLong, apiController.getSuggestionsAndId, apiController.getImage, locationsController.addLocation, (req, res) => {
   res.status(200).json(res.locals.locationsList);
 });
 

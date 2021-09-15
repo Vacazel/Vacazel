@@ -5,16 +5,16 @@ const locationsController = {};
 locationsController.getLocations = async (req, res, next) => {
   const query = 'SELECT * FROM locations';
   const result = await db.query(query);
-  res.locals.locationsList = result;
+  res.locals.locationsList = result.rows;
   next();
 }
 
 locationsController.addLocation = async (req, res, next) => {
 
   try {
-    const { xid, name, kinds, image } = req.body;
+    const { xid, name, kinds, image } = res.locals.locationData;
     const params = [xid, name, kinds, image];
-    console.log(req.body);
+    console.log(res.locals.locationData);
     const query = `INSERT INTO locations (xid, name, kinds, image)
     VALUES ($1, $2, $3, $4)
     RETURNING *`;
