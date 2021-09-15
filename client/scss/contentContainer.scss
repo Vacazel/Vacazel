@@ -1,0 +1,34 @@
+.content_container {
+  width: 100vw;
+  height: 88vh;
+  padding: 1rem 0;
+  overflow-y: auto;
+}
+
+.content_vacation_days {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 8rem;
+}
+
+.content_count_days {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.content_title {
+  font-size: $font-large;
+  font-weight: bold;
+}
+
+.content_days {
+  margin: 0 0.5rem;
+  font-size: $font-logo;
+  color: $primary-color;
+}
+
+.content_font {
+  font-size: $font-medium;
+  font-weight: normal;
+}

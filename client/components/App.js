@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import MainContainer from '../containers/MainContainer';
 
 const App = () => {
   return (
     <div>
-      <div>Add the component here</div>
+      <MainContainer />
     </div>
   );
 };
