@@ -3,13 +3,28 @@ import StartDatePicker from './StartDatePicker';
 import EndDatePicker from './EndDatePicker';
 import LastPlace from './LastPlace';
 
-const EditLastPlace = ({ editClickHandler, setUpdatePlace }) => {
+const EditLastPlace = ({
+  editClickHandler,
+  setUpdatePlace,
+  setLastPlace,
+  lastPlace,
+}) => {
   const [editPlace, setEditPlace] = useState({
     startDate: '',
     endDate: '',
     place: '',
     budget: 0,
+    image: '../client/img/Paris.jpeg',
   });
+
+  // useState({
+  //   startDate: '12/17/2020',
+  //   endDate: '12/27/2020',
+  //   place: 'Paris',
+  //   budget: '3000',
+  //   image: '',
+  //
+  // });
 
   const dateFromTimestamp = (dateObject) => {
     let month = dateObject.getMonth() + 1;
@@ -56,7 +71,15 @@ const EditLastPlace = ({ editClickHandler, setUpdatePlace }) => {
   };
 
   const onSubmitHandler = () => {
-    setUpdatePlace(editPlace.endDate);
+    // setUpdatePlace(editPlace.endDate);
+    setLastPlace({
+      ...lastPlace,
+      startDate: editPlace.startDate,
+      endDate: editPlace.endDate,
+      place: editPlace.place,
+      budget: editPlace.budget,
+      image: editPlace.image,
+    });
     editClickHandler();
   };
 
@@ -67,31 +90,31 @@ const EditLastPlace = ({ editClickHandler, setUpdatePlace }) => {
 
         <div className='edit_form'>
           {/* <form className='edit'> */}
-            {/* <label>Place Name </label> */}
-            <input
-              id='last_place'
-              type='text'
-              name='lastplace'
-              placeholder='Edit Last Place'
-              className='popup_input'
-              onChange={handlePlaceInputChange}
-            />
-            {/* <input className='edit_button' type='submit' value='Edit' /> */}
+          {/* <label>Place Name </label> */}
+          <input
+            id='last_place'
+            type='text'
+            name='lastplace'
+            placeholder='Edit Last Place'
+            className='popup_input'
+            onChange={handlePlaceInputChange}
+          />
+          {/* <input className='edit_button' type='submit' value='Edit' /> */}
           {/* </form> */}
         </div>
 
         <div className='edit_form'>
           {/* <form className='edit'> */}
-            {/* <label>Budget </label> */}
-            <input
-              id='budget'
-              type='text'
-              name='budget'
-              placeholder='Budget'
-              className='popup_input'
-              onChange={handleBudgetInputChange}
-            />
-            {/* <input className='edit_button' type='submit' value='Edit' /> */}
+          {/* <label>Budget </label> */}
+          <input
+            id='budget'
+            type='text'
+            name='budget'
+            placeholder='Budget'
+            className='popup_input'
+            onChange={handleBudgetInputChange}
+          />
+          {/* <input className='edit_button' type='submit' value='Edit' /> */}
           {/* </form> */}
         </div>
 
