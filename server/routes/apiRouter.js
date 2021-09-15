@@ -14,7 +14,7 @@ router.get('/getlocations', locationsController.getLocations, (req, res) => {
 });
 
 router.get('/bucketlist', (req, res) => {
-  res.status(200).json(res.locals.getBucket);
+  res.status(200).json(res.locals.bucketList);
 })
 
 router.get('/callapi', (req, res) => {
