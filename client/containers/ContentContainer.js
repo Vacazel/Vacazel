@@ -3,7 +3,7 @@ import LastPlace from '../components/LastPlace';
 import BucketList from '../components/BucketList';
 import UserDataService from '../service/userDataService';
 
-const ContentContainer = () => {
+const ContentContainer = ({setIsUser}) => {
   const [countDays, setCountDays] = useState(0);
   const [updatePlace, setUpdatePlace] = useState();
   const [lastPlace, setLastPlace] = useState({
@@ -12,7 +12,10 @@ const ContentContainer = () => {
     place: 'Paris',
     budget: '3000',
     image: '',
+    id: '',
+    payDayOff: '',
   });
+
 
   const calculateDate = () => {
     const currentDate = new Date(
@@ -24,6 +27,7 @@ const ContentContainer = () => {
         new Date().getFullYear()
     );
     const endDate = new Date(lastPlace.endDate);
+    console.log(endDate);
     const days =
       (currentDate.getTime() - endDate.getTime()) / (1000 * 3600 * 24);
 
@@ -33,14 +37,20 @@ const ContentContainer = () => {
   useEffect(async() => {
     const result = await UserDataService.getUserData('/api')
     console.log(result);
-    const result2 = await UserDataService.getUserData('/api/bucketlist')
-    console.log(result2);
-    const result3 = await UserDataService.getUserData('/api/getlocations')
-    console.log(result3);
     // get request from server to update last place.
     // when there is change on updatePlace, we will call the get request,
     // we need to setLastPlace from the axios call.
-    // console.log(updatePlace);
+
+    setLastPlace({ 
+      startDate: result.currentUser.start_date,
+      endDate: result.currentUser.end_date,
+      place: result.lastPlaceVisted.last_place_visited,
+      budget: result.currentUser.budget,
+      image: result.lastPlaceVisted.image,
+      id: result.currentUser.id,
+      payDayOff: result.currentUser.paid_time_off_left,
+    })
+
     setCountDays(calculateDate());
   }, [updatePlace]);
 

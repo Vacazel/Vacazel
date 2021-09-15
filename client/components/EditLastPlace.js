@@ -66,31 +66,33 @@ const EditLastPlace = ({ editClickHandler, setUpdatePlace }) => {
         <div className='content_title'>Edit Last Travel Details</div>
 
         <div className='edit_form'>
-          <form className='edit'>
+          {/* <form className='edit'> */}
             {/* <label>Place Name </label> */}
             <input
               id='last_place'
               type='text'
               name='lastplace'
               placeholder='Edit Last Place'
+              className='popup_input'
               onChange={handlePlaceInputChange}
             />
-            <input className='edit_button' type='submit' value='Edit' />
-          </form>
+            {/* <input className='edit_button' type='submit' value='Edit' /> */}
+          {/* </form> */}
         </div>
 
         <div className='edit_form'>
-          <form className='edit'>
+          {/* <form className='edit'> */}
             {/* <label>Budget </label> */}
             <input
               id='budget'
-              type='number'
+              type='text'
               name='budget'
               placeholder='Budget'
+              className='popup_input'
               onChange={handleBudgetInputChange}
             />
-            <input className='edit_button' type='submit' value='Edit' />
-          </form>
+            {/* <input className='edit_button' type='submit' value='Edit' /> */}
+          {/* </form> */}
         </div>
 
         <div className='edit_date'>

@@ -14,7 +14,7 @@ const LastPlace = ({ lastPlace, setUpdatePlace }) => {
       <div>
         <div className='content_title'>Last place you visited</div>
         <div className='last_details'>
-          <img className='last_picture' src='../client/img/Paris.jpeg' />
+          <img className='last_picture' src={lastPlace.image} />
           <ul>
             <li className='last_list small_font'>
               {`${lastPlace.startDate} ~ ${lastPlace.endDate}`}
