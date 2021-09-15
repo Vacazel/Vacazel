@@ -1,13 +1,23 @@
 import React, { Component, useState } from 'react';
+import { useEffect } from 'react/cjs/react.development';
 import User from './User';
 
 const Header = ({ isLogin }) => {
   const [clickUser, setClickUser] = useState(false);
 
-  const clickUserHandler = () => {
+  const clickUserHandler = (e) => {
+    e.stopPropagation();
     if (clickUser) return setClickUser(false);
     return setClickUser(true);
   };
+
+  useEffect(() => {
+    if (clickUser) {
+      document.body.addEventListener('click', () => {
+        setClickUser(false);
+      });
+    }
+  }, [clickUser]);
 
   return (
     <header className='header'>

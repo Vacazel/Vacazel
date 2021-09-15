@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LastPlace from '../components/LastPlace';
 import BucketList from '../components/BucketList';
+import UserDataService from '../service/userDataService';
 
 const ContentContainer = () => {
   return (
@@ -16,7 +17,9 @@ const ContentContainer = () => {
           <span>100</span>
           <span>days</span>
         </div> */}
+        <div className='small_font'> This is time to go to a vacation!</div>
       </div>
+
       <LastPlace />
       <BucketList />
     </div>

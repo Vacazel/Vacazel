@@ -7,14 +7,14 @@
 
 .content_vacation_days {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 8rem;
+  flex-direction: column;
+  padding: 3rem 8rem;
 }
 
 .content_count_days {
   display: flex;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .content_title {
@@ -31,59 +31,4 @@
 .content_font {
   font-size: $font-medium;
   font-weight: normal;
-}
-
-.last_place {
-  margin: 3rem 0;
-  padding: 3rem 8rem;
-  background-color: lighten($gray-color, 2%);
-}
-
-.last_location {
-  font-size: $font-large;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-}
-
-.last_details {
-  display: flex;
-  align-items: center;
-  font-size: $font-medium;
-}
-
-.last_picture {
-  width: 15rem;
-  margin-right: 2rem;
-}
-
-.last_list {
-  padding: 0.2rem 0;
-}
-
-.last_label {
-  font-weight: bold;
-}
-
-.last_data {
-  font-size: $font-small;
-}
-
-.last_edit {
-  margin-top: 0.8rem;
-  font-size: $font-micro;
-}
-
-.last_editbtn {
-  font-size: $font-micro;
-  font-weight: bold;
-  background-color: lighten($gray-color, 2%);
-}
-
-.last_editbtn:hover {
-  background-color: lighten($gray-color, 2%);
-  color: $accent-color1;
-}
-
-.bucketlist {
-  padding: 0 8rem;
 }
