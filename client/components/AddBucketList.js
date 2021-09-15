@@ -4,7 +4,22 @@ const AddBucketList = ({ addClickHandler }) => {
   return (
     <div className='popup_bg'>
       <div className='add_place'>
-        <div className='content_title'>Fill Out</div>
+        <div className='content_title'>Edit Bucket List</div>
+        
+        
+        <div className='edit_form'>
+            <form className='edit'>
+              {/* <label>Place Name </label> */}
+              <input
+                id='bucket_place'
+                type='text'
+                name='bucket_place'
+                placeholder='Edit Bucket List Item'
+              />
+              <input className='edit_button' type='submit' value='Edit' />
+            </form>
+          </div>
+        
         <div className='popup_Btns'>
           <button className='popup_closeBtn' onClick={addClickHandler}>
             CLOSE
