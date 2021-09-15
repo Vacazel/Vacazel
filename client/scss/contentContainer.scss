@@ -1,36 +1,34 @@
 .content_container {
   width: 100vw;
-  height: 94vh;  
+  height: 88vh;
+  padding: 1rem 0;
+  overflow-y: auto;
 }
 
-h1 {
-  color: $white-color;
-}
-
-.main-banner {
-  // text-align: center;
-  // margin: auto;
-  // vertical-align: middle;
+.content_vacation_days {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  padding: 3rem 8rem;
+}
+
+.content_count_days {
+  display: flex;
   align-items: center;
-  height: 60vh;
-  background-image: url('https://media.cntraveler.com/photos/5d112d50c4d7bd806dbc00a4/16:9/w_2560%2Cc_limit/airbnb%252520luxe.jpg');
-  background-position: center;
+  margin-bottom: 0.5rem;
 }
 
-.sub-banner {
-  margin: 40px;
+.content_title {
+  font-size: $font-large;
+  font-weight: bold;
 }
 
-.sub-banner-pic {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;    
-  flex-wrap: wrap;
+.content_days {
+  margin: 0 0.5rem;
+  font-size: $font-logo;
+  color: $primary-color;
 }
 
-#sub-pic {
-  border-radius: 10px;
-  margin-top: 25px;
+.content_font {
+  font-size: $font-medium;
+  font-weight: normal;
 }

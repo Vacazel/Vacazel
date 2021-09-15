@@ -1,13 +1,15 @@
-.content_container {
+.welcome_container {
   width: 100vw;
-  height: 94vh;  
+  height: 94vh;
+  overflow-y: auto;
 }
 
-h1 {
+.main_title {
+  font-size: $font-head;
   color: $white-color;
 }
 
-.main-banner {
+.main_banner {
   // text-align: center;
   // margin: auto;
   // vertical-align: middle;
@@ -19,18 +21,23 @@ h1 {
   background-position: center;
 }
 
-.sub-banner {
+.sub_banner {
   margin: 40px;
 }
 
-.sub-banner-pic {
+.sub_title {
+  font-size: $font-title;
+  font-weight: bold;
+}
+
+.sub_banner_pic {
   display: flex;
   justify-content: space-evenly;
-  flex-direction: row;    
+  flex-direction: row;
   flex-wrap: wrap;
 }
 
-#sub-pic {
+.sub_pic {
   border-radius: 10px;
   margin-top: 25px;
 }
