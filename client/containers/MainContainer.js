@@ -5,10 +5,11 @@ import ContentContainer from './ContentContainer';
 
 const MainContainer = () => {
   const [isLogin, setIsLogin] = useState(false);
+  const [isUser, setIsUser] = useState({username:'', userID: ''});
   return (
     <div className='main_container'>
       <Header isLogin={isLogin} setIsLogin={setIsLogin} />
-      {isLogin ? <ContentContainer /> : <WelcomeContainer />}
+      {isLogin ? <ContentContainer setIsUser={setIsUser}/> : <WelcomeContainer />}
     </div>
   );
 };

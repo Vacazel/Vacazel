@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+
 .welcome_container {
   width: 100vw;
   height: 88vh;
@@ -35,9 +37,19 @@
   justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 20px;
+}
+
+.image_text{
+  inline-size: 250px;
+  overflow-wrap: break-word;
+  margin-top: 10px;
+  font-family: 'Urbanist', sans-serif;
 }
 
 .sub_pic {
   border-radius: 10px;
   margin-top: 25px;
+  height: 275px;
+  width: 250px;
 }

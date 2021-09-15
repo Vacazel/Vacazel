@@ -1,6 +1,14 @@
 import React, { Component, useState } from 'react';
 
-const AddBucketList = ({ addClickHandler }) => {
+const AddBucketList = ({ addClickHandler, addPlaceHandler }) => {
+  const [location, setLocation] = useState('');
+
+  const locationHandler = (e) => {
+    setLocation(e.target.value);
+    console.log(location);
+  }
+
+
   return (
     <div className='popup_bg'>
       <div className='add_place'>
@@ -13,9 +21,11 @@ const AddBucketList = ({ addClickHandler }) => {
               id='bucket_place'
               type='text'
               name='bucket_place'
-              placeholder='Add Bucket List Item'
+              placeholder='Add Your Bucket Place!'
+              value={location}
+              className='popup_input'
+              onChange={locationHandler}
             />
-            <input className='edit_button' type='submit' value='Add' />
           </form>
         </div>
 
@@ -23,7 +33,7 @@ const AddBucketList = ({ addClickHandler }) => {
           <button className='popup_closeBtn' onClick={addClickHandler}>
             CLOSE
           </button>
-          <button className='popup_submitBtn' onClick={addClickHandler}>
+          <button className='popup_submitBtn' onClick={() => addPlaceHandler(location)}>
             SUBMIT
           </button>
         </div>

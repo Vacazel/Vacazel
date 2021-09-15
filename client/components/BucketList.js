@@ -5,28 +5,33 @@ import BucketListService from '../service/bucketListService';
 
 const BucketList = () => {
   const [addClick, setAddClick] = useState(false);
+  const [buckets, setBuckets] = useState([]);
+  const [postCall, setPostCall] = useState(false);
+
+  useEffect(async()=> {
+    const result = await BucketListService.getBucketList('/api/bucketlist');
+    setBuckets(result);
+  },[postCall])
 
   const addClickHandler = () => {
     if (!addClick) return setAddClick(true);
     return setAddClick(false);
   };
 
-  const places = [
-    'Hawaii',
-    'Barcelona',
-    'Seoul',
-    'Sydney',
-    'New York',
-    'Tokyo',
-  ];
-  const picture = 'https://via.placeholder.com/250x275';
-  const bucket = places.map((place, i) => {
+  const addPlaceHandler = async(place) => {
+    addClickHandler();
+    const result = await BucketListService.postBucketPlace('/api/addbucketlist', place);
+    if (!postCall) return setPostCall(true);
+    return setPostCall(false);
+  }
+
+  const bucket = buckets.map((place, i) => {
     return (
       <Bucket
         key={i}
         id={i}
-        place={place}
-        picture={picture}
+        place={place.name}
+        picture={place.image}
         DeleteBucket={DeleteBucket}
       />
     );
@@ -43,7 +48,7 @@ const BucketList = () => {
         </button>
       </div>
       <ul className='bucket_items'>{bucket}</ul>
-      {addClick && <AddBucketList addClickHandler={addClickHandler} />}
+      {addClick && <AddBucketList addPlaceHandler={addPlaceHandler} addClickHandler={addClickHandler} />}
     </div>
   );
 };
