@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+
+.welcome_container {
+  width: 100vw;
+  height: 88vh;
+  overflow-y: auto;
+}
+
+.main_title {
+  font-size: $font-head;
+  color: $white-color;
+}
+
+.main_banner {
+  // text-align: center;
+  // margin: auto;
+  // vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-image: url('https://media.cntraveler.com/photos/5d112d50c4d7bd806dbc00a4/16:9/w_2560%2Cc_limit/airbnb%252520luxe.jpg');
+  background-position: center;
+}
+
+.sub_banner {
+  margin: 40px;
+}
+
+.sub_title {
+  font-size: $font-title;
+  font-weight: bold;
+}
+
+.sub_banner_pic {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.image_text{
+  inline-size: 250px;
+  overflow-wrap: break-word;
+  margin-top: 10px;
+  font-family: 'Urbanist', sans-serif;
+}
+
+.sub_pic {
+  border-radius: 10px;
+  margin-top: 25px;
+  height: 275px;
+  width: 250px;
+}

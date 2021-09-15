@@ -1,0 +1,137 @@
+.last_place_section {
+  margin: 0 0 5rem 0;
+  padding: 3rem 8rem;
+  background-color: lighten($gray-color, 2%);
+}
+
+.last_location {
+  font-size: $font-large;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.last_details {
+  display: flex;
+  align-items: center;
+  font-size: $font-medium;
+  margin-top: 2rem;
+}
+
+.last_picture {
+  width: 30rem;
+  margin-right: 10rem;
+}
+
+.last_list {
+  padding: 0.7rem 0;
+}
+
+.last_place {
+  font-size: $font-head;
+  font-weight: bold;
+  color: $accent-color2;
+}
+
+.last_budget {
+  margin-top: 2rem;
+}
+
+.small_font {
+  font-size: $font-small;
+}
+
+.last_edit {
+  margin-top: 1rem;
+  font-size: $font-micro;
+}
+
+.last_editbtn {
+  font-size: $font-micro;
+  font-weight: bold;
+  background-color: lighten($gray-color, 2%);
+}
+
+.last_editbtn:hover {
+  background-color: lighten($gray-color, 2%);
+  color: $accent-color1;
+}
+
+.popup_bg {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background-color: transparentize($black-color, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.edit_last_place {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40rem;
+  height: 30rem;
+  background-color: $background-color;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.edit_date {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.edit {
+  padding: 0 25px;
+}
+
+.edit_button {
+  margin-left: 25px;
+  background-color: $gray-color;
+  border: none;
+  border-radius: 10px;
+  width: 70px;
+}
+
+#last_place {
+  border-radius: 7px;
+  border-color: $secondary-color;
+  padding-right: 10px;
+  margin-left: 10px;
+  width: 275px;
+}
+
+#budget {
+  border-radius: 7px;
+  border-color: $secondary-color;
+  padding-right: 10px;
+  outline: none;
+  margin-left: 10px;
+  width: 275px;
+}
+
+.popup_Btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.popup_closeBtn {
+  padding: 0.4rem 1rem;
+  color: $accent-color2;
+  border: 2px solid $accent-color2;
+  background-color: $background-color;
+  border-radius: 30px;
+}
+
+.popup_submitBtn {
+  padding: 0.4rem 1rem;
+  color: $white-color;
+  background-color: $primary-color;
+  border-radius: 30px;
+}
+
